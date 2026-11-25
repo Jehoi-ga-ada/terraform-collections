@@ -1,1 +1,2 @@
 account_id = "your-cloudflare-account-id"
+server_ip  = "your-server-public-ipv4"

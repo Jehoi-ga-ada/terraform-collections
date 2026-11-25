@@ -1,6 +1,6 @@
 # terraform-collections
 
-Creates the `fronesis.id` zone in Cloudflare.
+Creates the `fronesis.id` zone in Cloudflare, and the `komodo-hooks.fronesis.id` record (Komodo webhooks; other app records are made by dockroute).
 
 ## Use
 
@@ -12,7 +12,7 @@ terraform init
 terraform apply
 ```
 
-Put your Cloudflare account ID in `terraform.tfvars`.
+Put your Cloudflare account ID and the server's public IP (`server_ip`) in `terraform.tfvars`. It is git-ignored, so the IP stays out of the repo.
 
 `apply` prints the name servers. Set them at your domain registrar.
 

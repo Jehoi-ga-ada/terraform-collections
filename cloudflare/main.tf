@@ -29,3 +29,17 @@ resource "cloudflare_zone" "this" {
 output "name_servers" {
   value = cloudflare_zone.this.name_servers
 }
+
+variable "server_ip" {
+  type        = string
+  description = "domainesia-devops public IPv4"
+}
+
+resource "cloudflare_dns_record" "komodo_hooks" {
+  zone_id = cloudflare_zone.this.id
+  name    = "komodo-hooks.fronesis.id"
+  type    = "A"
+  content = var.server_ip
+  proxied = true
+  ttl     = 1
+}
